@@ -1,0 +1,24 @@
+DEPENDENCIES
+material ui: https://mui.com/material-ui/getting-started/installation/
+nivo charts: https://nivo.rocks/components
+full calendar: https://fullcalendar.io/docs
+formik: https://formik.org/docs/overview#installation
+yup validation: https://github.com/jquense/yup
+react pro sidebar: https://github.com/azouaoui-med/react-pro-sidebar
+
+ORGANISING CODE BASE design pattern
+-organise code base by features:
+eg. Using a single folder for each feature/page of the app containing all relevant files and data for a component
+-->some components might exist on all pages layout so use a global folder
+- try to keep a flat folder (avoid excessive nesting) structure without having too many files in each folder
+
+--> In this project = 
+added src/components (multiple page use components)
++ src/scenes for single page components 
++ src/global (for global components) 
++ src/theme.js file to setup: 
+++ colors and tyography light/dark mode using Tailwind Shades extension 
+++ mui theme settings function to return token based on mode 
+++ react context variable with createContext() function for color mode toggling 
+++ useMode function to store  mode state
+++ set 'theme' with useMemo() function to memoize the theme object
