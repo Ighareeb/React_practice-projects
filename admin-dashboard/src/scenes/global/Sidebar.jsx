@@ -31,6 +31,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 			icon={icon}
 		>
 			<Typography>{title}</Typography>
+			{/* with react-prosidebar you can pass Link so you can use react-router with the sidebar component */}
 			<Link to={to} />
 		</MenuItem>
 	);
@@ -45,7 +46,7 @@ export default function Sidebar() {
 	return (
 		<Box
 			sx={{
-				// overwrite react-pro-sidebar css !important since overwriting a library
+				// overwrite react-pro-sidebar css ProSidebar that is child component of Box (!important since overwriting a library)
 				'& .pro-side-inner': {
 					background: `${colors.primary[400]} !important`,
 				},
