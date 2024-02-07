@@ -21,4 +21,4 @@ added src/components (multiple page use components)
 ++ mui theme settings function to return token based on mode 
 ++ react context variable with createContext() function for color mode toggling 
 ++ useMode function to store  mode state
-++ set 'theme' with useMemo() function to memoize the theme object
+++ set 'theme' with useMemo() function to memoize the theme object.
