@@ -1,4 +1,5 @@
 import { useState } from 'react';
+//https://fullcalendar.io/
 import FullCalendar from '@fullcalendar/react';
 import { formatDate } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -22,6 +23,7 @@ export default function Calendar() {
 	const [currentEvents, setCurrentEvents] = useState([]);
 
 	const handleDateClick = (selected) => {
+		// console.log(selected);
 		const title = prompt('Please enter a new title for your event');
 		const calendarApi = selected.view.calendar;
 		calendarApi.unselect();
@@ -112,8 +114,8 @@ export default function Calendar() {
 						eventClick={handleEventClick}
 						eventsSet={(events) => setCurrentEvents(events)}
 						initialEvents={[
-							{ id: '12315', title: 'All day event', date: '2022-09-14' },
-							{ id: '5213', title: 'Timed event', date: '2022-09-28' },
+							{ id: '12315', title: 'All day event', date: '2024-02-14' },
+							{ id: '5213', title: 'Timed event', date: '2024-02-28' },
 						]}
 					></FullCalendar>
 				</Box>
@@ -121,3 +123,5 @@ export default function Calendar() {
 		</Box>
 	);
 }
+
+//note: interactionPlugin allows you to set time of the event by dragging
