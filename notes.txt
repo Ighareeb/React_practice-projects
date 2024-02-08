@@ -1,6 +1,7 @@
 DEPENDENCIES
 material ui: https://mui.com/material-ui/getting-started/installation/
 nivo charts: https://nivo.rocks/components
+website for nivo charts is really good, allows visualization and playground for chart props
 full calendar: https://fullcalendar.io/docs
 formik: https://formik.org/docs/overview#installation
 yup validation: https://github.com/jquense/yup
