@@ -22,3 +22,9 @@ added src/components (multiple page use components)
 ++ react context variable with createContext() function for color mode toggling 
 ++ useMode function to store  mode state
 ++ set 'theme' with useMemo() function to memoize the theme object.
+
+IMP: 
+Using Formik with MUI is a little more readable/easier compared to just using ReactHookForm where you would need to use Controllers to integrate with the external UI component library
+ReactHookForm: https://react-hook-form.com/get-started 
+
+yup provides alot of template validation schema that can be used

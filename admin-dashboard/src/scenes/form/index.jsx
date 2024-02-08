@@ -4,6 +4,15 @@ import * as yup from 'yup';
 import useMediaQuery from '@mui/material/useMediaQuery'; //custom hook to check if CSS media query matches (returns bool) to help create responsive design/adapt to different screen sizes(vp)
 import Header from '../../components/Header';
 
+const initialValues = {
+	firstName: '',
+	lastName: '',
+	email: '',
+	contact: '',
+	address1: '',
+	address2: '',
+};
+
 export default function Form() {
 	const isNonMobile = useMediaQuery('(min-width:600px)');
 
@@ -14,8 +23,6 @@ export default function Form() {
 	return (
 		<Box m="20px">
 			<Header title="CREATE USER" subtitle="Create a New User Profile" />
-
-			{/* Formik component provides form state and helpers to children via render prop function. */}
 			<Formik
 				onSubmit={handleFormSubmit}
 				initialValues={initialValues}
@@ -146,15 +153,8 @@ const checkoutSchema = yup.object().shape({
 	address1: yup.string().required('required'),
 	address2: yup.string().required('required'),
 });
-const initialValues = {
-	firstName: '',
-	lastName: '',
-	email: '',
-	contact: '',
-	address1: '',
-	address2: '',
-};
 
-//Formik keeps track of your form's state and then exposes it plus a few reusable methods and event handlers (handleChange, handleBlur, and handleSubmit) to your form via props. handleChange and handleBlur work exactly as expected--they use a name or id attribute to figure out which field to update.
+//Formik keeps track of your form's state and then exposes it plus a few reusable methods and event handlers (handleChange, handleBlur, and handleSubmit) to your form via props (in the function they are destructured). handleChange and handleBlur work exactly as expected--they use a name or id attribute to figure out which field to update.
 //Formik comes with a few extra components to make life easier and less verbose: <Form />, <Field />, and <ErrorMessage />. They use React context to hook into the parent <Formik /> state/methods.
+//eg. in Formik, handleBlur is a function that gets the field name from the onBlur event and sets the field to touched in Formik's state. This is useful for showing validation errors only after a field has been touched.
 //Yup called validationSchema which will automatically transform Yup's validation errors into a pretty object whose keys match values and touched - https://github.com/jquense/yup
