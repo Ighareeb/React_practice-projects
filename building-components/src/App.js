@@ -14,8 +14,9 @@ import './App.css';
 // import GithubProfileFinder from './components/github-profile-finder';
 // import SearchAutoComplete from './components/search-autocomplete-with-api';
 // import TicTacToe from './components/tic-tact-toe';
-import FeatureFlags from './components/feature-flag';
-import FeatureFlagGlobalState from './components/feature-flag/context';
+// import FeatureFlags from './components/feature-flag';
+// import FeatureFlagGlobalState from './components/feature-flag/context';
+import UseFetchHookTest from './components/use-fetch/test';
 
 function App() {
 	return (
@@ -38,9 +39,10 @@ function App() {
 			{/* <GithubProfileFinder /> */}
 			{/* <SearchAutoComplete /> */}
 			{/* <TicTacToe /> */}
-			<FeatureFlagGlobalState>
+			{/* <FeatureFlagGlobalState>
 				<FeatureFlags />
-			</FeatureFlagGlobalState>
+			</FeatureFlagGlobalState> */}
+			<UseFetchHookTest />
 		</div>
 	);
 }
