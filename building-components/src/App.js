@@ -9,7 +9,8 @@ import './App.css';
 // import QRCodeGenerator from './components/qr-code-generator';
 // import LightDarkMode from './components/light-dark-mode';
 // import ScrollIndicator from './components/scroll-indicator';
-import TabTestPage from './components/custom-tabs/tab-test-page';
+// import TabTestPage from './components/custom-tabs/tab-test-page';
+import ModalTestPage from './components/custom-modal-popup/modal-test-page';
 
 function App() {
 	return (
@@ -27,7 +28,8 @@ function App() {
 			{/* <QRCodeGenerator /> */}
 			{/* <LightDarkMode /> */}
 			{/* <ScrollIndicator url={'https://jsonplaceholder.typicode.com/posts'} /> */}
-			<TabTestPage />
+			{/* <TabTestPage /> */}
+			<ModalTestPage />
 		</div>
 	);
 }
