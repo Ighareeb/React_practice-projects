@@ -10,7 +10,8 @@ import './App.css';
 // import LightDarkMode from './components/light-dark-mode';
 // import ScrollIndicator from './components/scroll-indicator';
 // import TabTestPage from './components/custom-tabs/tab-test-page';
-import ModalTestPage from './components/custom-modal-popup/modal-test-page';
+// import ModalTestPage from './components/custom-modal-popup/modal-test-page';
+import GithubProfileFinder from './components/github-profile-finder';
 
 function App() {
 	return (
@@ -29,7 +30,8 @@ function App() {
 			{/* <LightDarkMode /> */}
 			{/* <ScrollIndicator url={'https://jsonplaceholder.typicode.com/posts'} /> */}
 			{/* <TabTestPage /> */}
-			<ModalTestPage />
+			{/* <ModalTestPage /> */}
+			<GithubProfileFinder />
 		</div>
 	);
 }
