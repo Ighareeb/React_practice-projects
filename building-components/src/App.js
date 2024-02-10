@@ -11,7 +11,8 @@ import './App.css';
 // import ScrollIndicator from './components/scroll-indicator';
 // import TabTestPage from './components/custom-tabs/tab-test-page';
 // import ModalTestPage from './components/custom-modal-popup/modal-test-page';
-import GithubProfileFinder from './components/github-profile-finder';
+// import GithubProfileFinder from './components/github-profile-finder';
+import SearchAutoComplete from './components/search-autocomplete-with-api';
 
 function App() {
 	return (
@@ -31,7 +32,8 @@ function App() {
 			{/* <ScrollIndicator url={'https://jsonplaceholder.typicode.com/posts'} /> */}
 			{/* <TabTestPage /> */}
 			{/* <ModalTestPage /> */}
-			<GithubProfileFinder />
+			{/* <GithubProfileFinder /> */}
+			<SearchAutoComplete />
 		</div>
 	);
 }
