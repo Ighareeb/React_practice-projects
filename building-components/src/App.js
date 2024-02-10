@@ -1,5 +1,4 @@
 import './App.css';
-import TicTacToe from './components/tic-tact-toe';
 // import Accordian from './components/accordian';
 // import RandomColor from './components/random-color';
 // import StarRating from './components/star-rating';
@@ -14,6 +13,9 @@ import TicTacToe from './components/tic-tact-toe';
 // import ModalTestPage from './components/custom-modal-popup/modal-test-page';
 // import GithubProfileFinder from './components/github-profile-finder';
 // import SearchAutoComplete from './components/search-autocomplete-with-api';
+// import TicTacToe from './components/tic-tact-toe';
+import FeatureFlags from './components/feature-flag';
+import FeatureFlagGlobalState from './components/feature-flag/context';
 
 function App() {
 	return (
@@ -35,7 +37,10 @@ function App() {
 			{/* <ModalTestPage /> */}
 			{/* <GithubProfileFinder /> */}
 			{/* <SearchAutoComplete /> */}
-			<TicTacToe />
+			{/* <TicTacToe /> */}
+			<FeatureFlagGlobalState>
+				<FeatureFlags />
+			</FeatureFlagGlobalState>
 		</div>
 	);
 }
