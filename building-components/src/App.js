@@ -1,4 +1,5 @@
 import './App.css';
+import TicTacToe from './components/tic-tact-toe';
 // import Accordian from './components/accordian';
 // import RandomColor from './components/random-color';
 // import StarRating from './components/star-rating';
@@ -12,7 +13,7 @@ import './App.css';
 // import TabTestPage from './components/custom-tabs/tab-test-page';
 // import ModalTestPage from './components/custom-modal-popup/modal-test-page';
 // import GithubProfileFinder from './components/github-profile-finder';
-import SearchAutoComplete from './components/search-autocomplete-with-api';
+// import SearchAutoComplete from './components/search-autocomplete-with-api';
 
 function App() {
 	return (
@@ -33,7 +34,8 @@ function App() {
 			{/* <TabTestPage /> */}
 			{/* <ModalTestPage /> */}
 			{/* <GithubProfileFinder /> */}
-			<SearchAutoComplete />
+			{/* <SearchAutoComplete /> */}
+			<TicTacToe />
 		</div>
 	);
 }
