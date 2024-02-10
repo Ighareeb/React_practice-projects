@@ -8,7 +8,8 @@ import './App.css';
 // import menus from './components/tree-view/data';
 // import QRCodeGenerator from './components/qr-code-generator';
 // import LightDarkMode from './components/light-dark-mode';
-import ScrollIndicator from './components/scroll-indicator';
+// import ScrollIndicator from './components/scroll-indicator';
+import TabTestPage from './components/custom-tabs/tab-test-page';
 
 function App() {
 	return (
@@ -25,7 +26,8 @@ function App() {
 			{/* <TreeView menus={menus} /> */}
 			{/* <QRCodeGenerator /> */}
 			{/* <LightDarkMode /> */}
-			<ScrollIndicator url={'https://jsonplaceholder.typicode.com/posts'} />
+			{/* <ScrollIndicator url={'https://jsonplaceholder.typicode.com/posts'} /> */}
+			<TabTestPage />
 		</div>
 	);
 }
