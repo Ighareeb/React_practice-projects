@@ -18,7 +18,9 @@ import './App.css';
 // import FeatureFlagGlobalState from './components/feature-flag/context';
 // import UseFetchHookTest from './components/use-fetch/test';
 // import UseOutsideClickTest from './components/use-outside-click/test';
-import UseWindowResizeTest from './components/use-window-resize/test';
+// import UseWindowResizeTest from './components/use-window-resize/test';
+// import ScrollToTopAndBottom from './components/scroll-t2b-and-2section/scroll-t2b';
+import ScrollToSection from './components/scroll-t2b-and-2section/scroll2section';
 
 function App() {
 	return (
@@ -46,7 +48,9 @@ function App() {
 			</FeatureFlagGlobalState> */}
 			{/* <UseFetchHookTest /> */}
 			{/* <UseOutsideClickTest /> */}
-			<UseWindowResizeTest />
+			{/* <UseWindowResizeTest /> */}
+			{/* <ScrollToTopAndBottom /> */}
+			<ScrollToSection />
 		</div>
 	);
 }
