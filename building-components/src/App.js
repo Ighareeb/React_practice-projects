@@ -17,7 +17,8 @@ import './App.css';
 // import FeatureFlags from './components/feature-flag';
 // import FeatureFlagGlobalState from './components/feature-flag/context';
 // import UseFetchHookTest from './components/use-fetch/test';
-import UseOutsideClickTest from './components/use-outside-click/test';
+// import UseOutsideClickTest from './components/use-outside-click/test';
+import UseWindowResizeTest from './components/use-window-resize/test';
 
 function App() {
 	return (
@@ -44,7 +45,8 @@ function App() {
 				<FeatureFlags />
 			</FeatureFlagGlobalState> */}
 			{/* <UseFetchHookTest /> */}
-			<UseOutsideClickTest />
+			{/* <UseOutsideClickTest /> */}
+			<UseWindowResizeTest />
 		</div>
 	);
 }
