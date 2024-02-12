@@ -4,7 +4,7 @@ export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
 	const [value, setValue] = useState('expense');
-	const [totalExpenses, setTotalExpenses] = useState(0);
+	const [totalExpense, setTotalExpense] = useState(0);
 	const [totalIncome, setTotalIncome] = useState(0);
 	const [allTransactions, setAllTransactions] = useState([]);
 	const [formData, setFormData] = useState({
@@ -32,14 +32,15 @@ export default function GlobalState({ children }) {
 			value={{
 				value,
 				setValue,
-				totalExpenses,
-				setTotalExpenses,
+				totalExpense,
+				setTotalExpense,
 				totalIncome,
 				setTotalIncome,
 				allTransactions,
 				setAllTransactions,
 				formData,
 				setFormData,
+				handleFormSubmit,
 			}}
 		>
 			{children}

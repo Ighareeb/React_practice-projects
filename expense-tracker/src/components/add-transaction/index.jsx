@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalState';
+import { GlobalContext } from '../../context';
 import {
 	Button,
 	FormControl,

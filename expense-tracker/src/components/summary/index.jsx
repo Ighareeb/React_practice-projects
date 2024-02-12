@@ -1,6 +1,8 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import TransactionForm from '../add-transaction';
 import TransactionChartSummary from '../chart';
+
+//isOpen, onClose from useDisclosure ChakraUI hook in main/index.jsx component
 export default function Summary({
 	onClose,
 	isOpen,
