@@ -13,10 +13,12 @@ export default function GlobalState({ children }) {
 		description: '',
 	});
 
+	//function used in add-transaction/index.jsx form
 	function handleFormSubmit(currentFormData) {
-		if (!currentFormData.decription || !currentFormData.amount) {
-			return;
+		if (!currentFormData.description || !currentFormData.amount) {
+			return; //basic form validation to ensure fields are not empty when submitted
 		}
+		//new transaction added to allTransactions array using form data
 		setAllTransactions([
 			...allTransactions,
 			{ ...currentFormData, id: Date.now() },
