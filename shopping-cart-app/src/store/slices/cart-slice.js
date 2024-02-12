@@ -1,3 +1,13 @@
+// function createSlice({
+//     // A name, used in action types
+//     name: string,
+//     // The initial state for the reducer
+//     initialState: State,
+//     // An object of "case reducers". Key names will be used to generate actions.
+//     reducers: Record<string, ReducerFunction | ReducerAndPrepareObject>,
+// })
+// // reducers is object with function intended to handle specific action types (almost like switch case conditional)
+// // the app dispatches actions matching reducer to call. Function components useDispatch and create a dipatch instance to dispatch(reducer(args)) from the args in that functional component. All the state is managed by the reducer not in the functional component. (therefore need to wrap the main index.js in a Provider)
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];

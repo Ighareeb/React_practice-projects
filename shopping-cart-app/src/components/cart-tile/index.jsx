@@ -2,6 +2,7 @@
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../../store/slices/cart-slice';
 
+//cartItem destructured props - passed from pages/cart.jsx
 export default function CartTile({ cartItem }) {
 	const dispatch = useDispatch();
 
