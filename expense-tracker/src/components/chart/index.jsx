@@ -1,5 +1,5 @@
 import Chart from 'react-apexcharts';
-
+//function will be used in summary/index.jsx
 const options = {
 	labels: ['Income', 'Expense'],
 	colors: ['#213ebf', '#FD5E53'],
@@ -43,7 +43,7 @@ const options = {
 		},
 	},
 };
-
+// props passed from /summary/index.jsx --> expense={totalExpense} income={totalIncome}
 export default function TransactionChartSummary({
 	expense = 100,
 	income = 100,

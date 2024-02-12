@@ -16,6 +16,7 @@ import {
 	RadioGroup,
 } from '@chakra-ui/react';
 
+// props passed from /summary/index.jsx --> onClose={onClose} isOpen={isOpen}
 export default function TransactionForm({ onClose, isOpen }) {
 	const { formData, setFormData, value, setValue, handleFormSubmit } =
 		useContext(GlobalContext);
