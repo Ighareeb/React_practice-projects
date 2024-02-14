@@ -26,3 +26,17 @@ app.use('/client', clientRoutes); //sidebar menu routes (products, customers, tr
 app.use('/general', generalRoutes); //user and dashboard/UI
 app.use('/management', managementRoutes); //sidebar menu routes (admin, performance)
 app.use('/sales', salesRoutes); //sidebar menu routes (overview, daily, monthly, yearly)
+
+// Mongoose setup
+const PORT = process.env.PORT || 9000;
+mongoose
+	.connect(process.env.MONGO_URL, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
+	.then(() => {
+		app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+	})
+	.catch((err) => {
+		console.log(`Error: ${err} ${err.message} - Server did not connect`);
+	});
