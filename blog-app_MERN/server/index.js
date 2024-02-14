@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors'); //provides middleware for cross-origin resource sharing *see note below
 const blogRouter = require('./route/blog-route');
-
+require('dotenv').config();
 require('./db');
+
+const PORT = 5000 || process.env.PORT;
 
 const app = express();
 app.use(cors());
@@ -15,7 +17,7 @@ app.use('/api', (req, res) => {
 	res.status(200).json({ message: 'API is working...' });
 });
 
-app.listen(5000, () => console.log('App is running on port 5000'));
+app.listen(PORT, () => console.log('App is running on port 5000'));
 
 //NOTE: {CORS}
 // https://expressjs.com/en/resources/middleware/cors.html#:~:text=CORS%20is%20a%20node.js,enable%20CORS%20with%20various%20options.

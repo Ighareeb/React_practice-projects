@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { GlobalContext } from '../../context';
 import axios from 'axios';
-import classes from './style.module.css';
+import classes from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
 import { FaTrash, FaEdit } from 'react-icons/fa';
 
@@ -58,7 +58,7 @@ export default function Home() {
 								<p>{blogItem.description}</p>
 								<FaEdit onClick={() => handleEdit(blogItem)} size={30} />
 								<FaTrash
-									onClick={() => handleDeleteBlog(blogItem.id)}
+									onClick={() => handleDeleteBlog(blogItem._id)}
 									size={30}
 								/>
 							</div>
