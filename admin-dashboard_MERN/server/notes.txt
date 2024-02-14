@@ -1,0 +1,41 @@
+Nivo: https://nivo.rocks/
+
+Material UI: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqazNEQU1wS2JIZlBkeUt2VVJ6M2U1LW9ZMEJUd3xBQ3Jtc0ttQzYyV3VyTDFQd3RjT1pFNm1VZHdWZndIZFZYanJPUWN2Z2JkZWZKdFFLNTFZSm1uUFQwM1BEa092WWpxRXRseVptQWU0eXVsdmFVX3c4b0dqOURKc0hpNlpCU2xlanZvZDlZTlBWdWJYSVBGX3RJcw&q=https%3A%2F%2Fmui.com%2Fmaterial-ui%2Fgetting-started%2Finstallation%2F&v=0cPCMIuDk2I
+
+Material UI Data Grid: https://mui.com/x/react-data-grid/
+
+React Router: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFVPd0ZfYUFFS0V0NHJYQnltLWpLNVhlODBid3xBQ3Jtc0tsbWZUaGNJRGR3QU5oRXczNHg4XzdQZzdkdUthT1JZdl9HWlIzbEJyVTZOSFowZEFxdW5GaUtpdXVEdmZIblJxSElPbWIxemM4eHN5azhJa0l4TXFXNmQ2M0kwNnI5LUt1TGlvYWMtYlA4Ui1nWkZFUQ&q=https%3A%2F%2Freactrouter.com%2Fen%2Fv6.3.0%2Fgetting-started%2Finstallation&v=0cPCMIuDk2I
+
+React Date Picker: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWNJTjk5VElXOWhOOXhIUFlZd3hidGgwVVRnUXxBQ3Jtc0ttZ2Q5ek9BSGVYUW83RWx6bTBtSHljb05GZEtOTWlzYUs4Vk9KeXRLMkI4a1pET2NHYUcwNU5WWWNmRmw1c0VhU2l4NVRadTFudFNpc0h3bTNrcE9vZkoxLWFYSU9KUlpQd1pkNTRfX0I2NFdBaFloSQ&q=https%3A%2F%2Freactdatepicker.com%2F%23example-date-range&v=0cPCMIuDk2I.
+
+Redux Toolkit: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa0pvbHhoMWpXTnhVT19vUzlGMl9VN2FHMFJJZ3xBQ3Jtc0ttTmdRcXRBYldWYURBX0JTS3I4ZkN4NVJzN2lfOGNIUWRhemgzd0daRjFoM1d3UmhWOWVJMzJ1QTY4a3FXa0tzUUNRSGJhRDZOSkZTS3kzR2xBMlFjVllPaG1ULWF3MDJzb0FmUXVOc19mNnRNdDdlMA&q=https%3A%2F%2Fredux-toolkit.js.org%2Fintroduction%2Fgetting-started&v=0cPCMIuDk2I
+
+Redux Toolkit Query: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblVLVlNfTl84bHQ2OWd3UWVUS1c0ZDVYd1Vpd3xBQ3Jtc0tsTmZLSTh5MnJTbkNKaWJ2TEZQZng3YmFUQ2JwMWNmWERHZmF1enJtS0l3aWVhRVJXWTRtQndFbmlYMzZlWXhQemd6bXVjQlJZbFFLdE9TN1JhZ3UyMUlrRmtCdTZwX2JYZy1HQ3VDa3hXYi1FRXVvOA&q=https%3A%2F%2Fredux-toolkit.js.org%2Frtk-query%2Foverview&v=0cPCMIuDk2I
+
+Dotenv: https://github.com/motdotla/dotenv
+
+JsonWebToken: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2xIUTd0Zk95VHpuZTJldi02NkxBTUItMHNaUXxBQ3Jtc0tsMkVjdjByaG1BcG1yb0x5RDQ5NmpjMnFkZzJ5VGNaMVJHSVhCcHFSQnNFekVRc2JDQmF0TENIRVRWT1ZEZVF2cGZkQXFZbUVib1paZFlGQkNBRHVkRGVmVTVFNlZEdHBwZ3VmdUlVWkYzMU05Z1ZCOA&q=https%3A%2F%2Fgithub.com%2Fauth0%2Fnode-jsonwebtoken&v=0cPCMIuDk2I
+
+Render: https://render.com/
+
+Railway: https://railway.app/
+
+MongoDB: https://www.mongodb.com/
+
+Mongoose: https://github.com/Automattic/mongoose
+
+MongoDB Aggregate: 
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3dPZWZ1MHU4RGN1N2FQc01rMVJ3NVUyamZRd3xBQ3Jtc0ttOVdyUjVkaERQZTFsa1YwYzY0WE55b3FzTzk5VTAtS3ZvV3FCa3JkODZtZzVyUmdEVW5adXVPTTdxRTNpbm04S0N4LWt6UG94VHdwNmtubzROOEpuc1hyUzBaQWNHYTZuSU9pVjRVQVRIX05maVQtVQ&q=https%3A%2F%2Fwww.mongodb.com%2Fdocs%2Fmanual%2Freference%2Foperator%2Faggregation-pipeline%2F&v=0cPCMIuDk2I
+https://www.npmjs.com/package/helmet/v/7.1.0
+
+Helmet: https://www.npmjs.com/package/helmet/v/7.1.0
+Helmet helps secure Express apps by setting HTTP response headers.
+
+Morgan: https://www.npmjs.com/package/morgan
+Express middleware for logging HTTP requests.
