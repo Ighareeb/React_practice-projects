@@ -16,3 +16,7 @@ CLIENT App.js --> imported ThemeProvider to wrap + created routes (+ added folde
 scenes:
 layout/index.js =  added some imports, plus started layout adding Navbar and Outlet
 dashboard/index.js = skeleton setup
+
+CLIENT: 
+Sidebar component: set imports, created array for all icons to map over 
+Added Sidebar component in layout.jsx + added state to check if open + bool to check screen size of device to set responsive layout (useMediaQuery hook) - completed Sidebar menu structure

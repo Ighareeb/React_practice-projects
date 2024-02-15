@@ -6,10 +6,23 @@ import Navbar from 'components/NavBar';
 import SideBar from 'components/Sidebar';
 
 export default function Layout() {
+	//returns boolean depending on whether min-width is greater than 600px (desktop === true - mobile === false)
+	const isNonMobile = useMediaQuery('(min-width:600px)');
+	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
 	return (
-		<Box width="100%" height="100%">
+		<Box display={isNonMobile ? 'flex' : 'block'} width="100%" height="100%">
 			<Box>
-				<Navbar />
+				<SideBar
+					isNonMobile={isNonMobile}
+					isSidebarOpen={isSidebarOpen}
+					setIsSidebarOpen={setIsSidebarOpen}
+					drawerWidth="250px"
+				/>
+				<Navbar
+					isSidebarOpen={isSidebarOpen}
+					setIsSidebarOpen={setIsSidebarOpen}
+				/>
 				<Outlet />
 			</Box>
 		</Box>
