@@ -62,11 +62,10 @@ export default function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
 						p="0.1rem 1.5rem"
 					>
 						{/* Search input box */}
-						<InputBase placeholder="Search...">
-							<IconButton>
-								<Search />
-							</IconButton>
-						</InputBase>
+						<InputBase placeholder="Search..." />
+						<IconButton>
+							<Search />
+						</IconButton>
 					</FlexBetween>
 				</FlexBetween>
 
@@ -74,7 +73,7 @@ export default function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
 				<FlexBetween gap="1.5rem">
 					{/* toggle light/dark icon */}
 					<IconButton onClick={() => dispatch(setMode())}>
-						{theme.palette.mode === 'dark ' ? (
+						{theme.palette.mode === 'dark' ? (
 							<DarkModeOutlined sx={{ fontSize: '25px' }} />
 						) : (
 							<LightModeOutlined sx={{ fontSize: '25px' }} />
@@ -102,7 +101,7 @@ export default function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
 								alt="profile"
 								src={profileImage}
 								height="32px"
-								width="32"
+								width="32px"
 								borderRadius="50%"
 								sx={{ objectFit: 'cover' }}
 							/>
@@ -113,13 +112,13 @@ export default function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
 									fontSize="0.85rem"
 									sx={{ color: theme.palette.secondary[100] }}
 								>
-									{user.name}
+									{/* {user.name} */}
 								</Typography>
 								<Typography
 									fontSize="0.75rem"
 									sx={{ color: theme.palette.secondary[200] }}
 								>
-									{user.occupation}
+									{/* {user.occupation} */}
 								</Typography>
 							</Box>
 							<ArrowDropDownOutlined

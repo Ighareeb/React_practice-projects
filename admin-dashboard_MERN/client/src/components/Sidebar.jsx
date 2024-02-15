@@ -96,14 +96,15 @@ const navItems = [
 export default function SideBar({
 	user,
 	drawerWidth,
+	//sideBar status set/toggled in Navbar.jsx onClick function
 	isSidebarOpen,
 	setIsSidebarOpen,
 	isNonMobile,
 }) {
 	const { pathname } = useLocation();
-	const [active, setActive] = useState('');
+	const [active, setActive] = useState(''); //determine which page is active/the user is on
 	const navigate = useNavigate();
-	const theme = useTheme();
+	const theme = useTheme(); //allows access to theme outside of the ThemeProvider in App.js
 
 	useEffect(() => {
 		setActive(pathname.substring(1)); //substring(1) removes the '/' from the pathname
@@ -119,6 +120,7 @@ export default function SideBar({
 					anchor="left"
 					sx={{
 						width: drawerWidth,
+						//lookup css class with inspect in browser - & is ref to parent selector (<Drawer>)
 						'& .MuiDrawer-paper': {
 							color: theme.palette.secondary[200],
 							backgroundColor: theme.palette.background.alt,
@@ -136,6 +138,7 @@ export default function SideBar({
 										ECOMVISION
 									</Typography>
 								</Box>
+								{/* when on mobile screen - button to toggle sidebar */}
 								{!isNonMobile && (
 									<IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
 										<ChevronLeft />
@@ -152,6 +155,7 @@ export default function SideBar({
 										</Typography>
 									);
 								}
+								//lowercaseText needed to match lowercase routes for navigate()
 								const lcText = text.toLowerCase();
 
 								return (
@@ -159,6 +163,7 @@ export default function SideBar({
 										<ListItemButton
 											onClick={() => {
 												navigate(`/${lcText}`);
+												//active state used to change color/highlight & backgroundColor on Navbar
 												setActive(lcText);
 											}}
 											sx={{
@@ -212,13 +217,13 @@ export default function SideBar({
 									fontSize="0.9rem"
 									sx={{ color: theme.palette.secondary[100] }}
 								>
-									{user.name}
+									{/* {user.name} */}
 								</Typography>
 								<Typography
 									fontSize="0.8rem"
 									sx={{ color: theme.palette.secondary[200] }}
 								>
-									{user.occupation}
+									{/* {user.occupation} */}
 								</Typography>
 							</Box>
 							<SettingsOutlined

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, useMediaQuery } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Navbar from 'components/NavBar';
+import Navbar from 'components/Navbar';
 import SideBar from 'components/Sidebar';
 
 export default function Layout() {
@@ -19,10 +19,12 @@ export default function Layout() {
 					setIsSidebarOpen={setIsSidebarOpen}
 					drawerWidth="250px"
 				/>
-				<Navbar
-					isSidebarOpen={isSidebarOpen}
-					setIsSidebarOpen={setIsSidebarOpen}
-				/>
+				<Box flexGrow={1}>
+					<Navbar
+						isSidebarOpen={isSidebarOpen}
+						setIsSidebarOpen={setIsSidebarOpen}
+					/>
+				</Box>
 				<Outlet />
 			</Box>
 		</Box>
