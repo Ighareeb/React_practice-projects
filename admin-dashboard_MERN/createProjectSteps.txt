@@ -1,0 +1,18 @@
+started on SERVER = added dependencies
+
+index.js (main/root) added imports and configs + added some routes + added routes dir with the 4 routes
+
+added general setup/skeleton and imports for the routes files + added controllers, data, models directories + skeleton files for controller folder
+
+setting up mongoDB - added .env + mongoose setup in index.js TESTED DB connected OK
+
+CLIENT/FE - added dependency packages
+
+CLIENT --> created jsconfig.json + src/theme.js files (completed both) + added fonts/default css to index.css src/[assets, components, scenes, state] dits + cleaned up default create react files ++ SERVER added /data/index.js with data for the app + /models folder added
+
+CLIENT - /src/state/index.js -->setting up redux & redux toolkit so light/dark mode from themes can be stored in state + configured & added redux provider to root index.js
+
+CLIENT App.js --> imported ThemeProvider to wrap + created routes (+ added folders for src/scenes folders with index.js files for components for those routes - worked on some of the scenes folder (dashboard, layout) + created components/FlexBetween.jsx (styled component - made Box for mui components custom Flex) + completed component/Navbar.jsx
+scenes:
+layout/index.js =  added some imports, plus started layout adding Navbar and Outlet
+dashboard/index.js = skeleton setup
