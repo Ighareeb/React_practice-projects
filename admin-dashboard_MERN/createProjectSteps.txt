@@ -34,3 +34,5 @@ made API call in layout/index.js
 TESTED - data fetched OK forgot to add response in controller
 -->contd. passed data that was fetched into layout (Sidebar and Navbar) component and displayed in UI 
 fixed navbar UI - removed a <Box> that was wrapping and causing the issue TEST UI OK
+
+SERVER - completed created all schemas models for the project for DB /server/models/*-[AffiliateStat, OverAllStat, Product, ProductStat, Transaction].js
