@@ -43,3 +43,12 @@ server/controllers/(general, client, management, sales).js
 
 SERVER - COMPLETED - added data imports for remaining routes and controllers + added remaining data insertion to DB mongoose.connect
 --> checked DB ALL DATA INSERTED OK!
+
+CLIENT --> started working on src/components/ 
+BreakdownChart.jsx
+DataGridCustomColumnMenu.jsx
+DataGridCustomToolbar.jsx
+Header.jsx
+OverviewChart.jsx
+StatBox.jsx
+++ added state/api queries used in the components
