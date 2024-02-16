@@ -40,3 +40,6 @@ SERVER - completed created all schemas models for the project for DB /server/mod
 SERVER - completed all routes files + utility functions in the controller folder for those routes:
 server/routes/(general, client, management, sales).js
 server/controllers/(general, client, management, sales).js
+
+SERVER - COMPLETED - added data imports for remaining routes and controllers + added remaining data insertion to DB mongoose.connect
+--> checked DB ALL DATA INSERTED OK!

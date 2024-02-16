@@ -12,7 +12,19 @@ import salesRoutes from './routes/sales.js';
 
 //data imports
 // import User from './models/User.js';
-// import { dataUser } from './data/index.js';
+import Product from './models/Product.js';
+import ProductStat from './models/ProductStat.js';
+import Transaction from './models/Transaction.js';
+import OverallStat from './models/OverallStat.js';
+import AffiliateStat from './models/AffiliateStat.js';
+import {
+	// dataUser,
+	dataProduct,
+	dataProductStat,
+	dataTransaction,
+	dataOverallStat,
+	dataAffiliateStat,
+} from './data/index.js';
 
 // configuration
 dotenv.config();
@@ -42,6 +54,11 @@ mongoose
 		app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 		// only need to add data one time so you aren't duplicating/creating errors (reason it is commented out after first connect)
 		// User.insertMany(dataUser);
+		// Product.insertMany(dataProduct);
+		// ProductStat.insertMany(dataProductStat);
+		// Transaction.insertMany(dataTransaction);
+		// OverallStat.insertMany(dataOverallStat);
+		// AffiliateStat.insertMany(dataAffiliateStat);
 	})
 	.catch((err) => {
 		console.log(`Error: ${err} ${err.message} - Server did not connect`);

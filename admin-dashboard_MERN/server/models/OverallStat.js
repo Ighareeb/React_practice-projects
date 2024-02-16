@@ -28,5 +28,5 @@ const OverallStatSchema = new mongoose.Schema(
 	{ timestamps: true }, // mongoose auto adds createdAt/updatedAt fields to schema
 );
 
-const User = mongoose.model('OverallStat', OverallStatSchema);
+const OverallStat = mongoose.model('OverallStat', OverallStatSchema);
 export default OverallStat;
