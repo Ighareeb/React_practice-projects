@@ -5,12 +5,18 @@ import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from 'state';
 import { Provider } from 'react-redux';
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { api } from 'state/api';
 
 const store = configureStore({
 	reducer: {
 		global: globalReducer,
+		[api.reducerPath]: api.reducer,
 	},
+	middleware: (getDefault) => getDefault().concat(api.middleware),
+	//It intercepts the actions dispatched by the api slice and performs side effects like sending HTTP requests.
 });
+setupListeners(store.dispatch);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -25,3 +25,10 @@ imp-<Drawer> sidebar component https://mui.com/material-ui/react-drawer/
 Getting user info --> send req with user id to BE so it response with info about user (without auth for now so set up initial state on FE with user id)
 Connect to BE - completed router for User in server/routes/general.js and the function for it in server/controllers/general.js (only added User as only done that schema for now) + need to set up schema in server/models/User.js 
 + inject user data array from data/index.js (dataUser) ==> import model and data into server/index.js + inside mongoose.connect User.insertMany(dataUser) - TESTED - data inserted into DB OK! (some issues with navbar UI *need to fix)
+
+Setting up CLIENT server backend API calls using redux toolkit query - 
+/client/src/state/api.js - create api file/api slice + created User endpoint
+created client/.env.local file for base URL
+imported setuplisteners and api into client/App.js to add to store config as reducer
+made API call in layout/index.js
+TESTED - data fetched OK forgot to add response in controller
