@@ -17,19 +17,20 @@ export default function Layout() {
 
 	return (
 		<Box display={isNonMobile ? 'flex' : 'block'} width="100%" height="100%">
-			<Box>
-				<SideBar
-					isNonMobile={isNonMobile}
+			<SideBar
+				user={data || {}}
+				isNonMobile={isNonMobile}
+				isSidebarOpen={isSidebarOpen}
+				setIsSidebarOpen={setIsSidebarOpen}
+				drawerWidth="250px"
+			/>
+			{/* flexGrow allow Navbar to take up and fill all the remaining width - Sidebar 250px */}
+			<Box flexGrow={1}>
+				<Navbar
+					user={data || {}}
 					isSidebarOpen={isSidebarOpen}
 					setIsSidebarOpen={setIsSidebarOpen}
-					drawerWidth="250px"
 				/>
-				<Box flexGrow={1}>
-					<Navbar
-						isSidebarOpen={isSidebarOpen}
-						setIsSidebarOpen={setIsSidebarOpen}
-					/>
-				</Box>
 				<Outlet />
 			</Box>
 		</Box>

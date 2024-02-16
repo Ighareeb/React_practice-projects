@@ -32,11 +32,12 @@ export default function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
 	const dispatch = useDispatch();
 	const theme = useTheme();
 
-	const [anchorEl, setAnchorEl] = useState(null); //for Menu element toggle with Button
+	//for Menu element dropdown (to Log out) START
+	const [anchorEl, setAnchorEl] = useState(null);
 	const isOpen = Boolean(anchorEl);
-
 	const handleClick = (e) => setAnchorEl(e.currentTarget);
 	const handleClose = () => setAnchorEl(null);
+	//Menu element dropdown END
 
 	return (
 		// Appbar is the 'header' bar at the top of the page above dashboard, setting, search, burger menu, toggle light/darl
@@ -112,13 +113,13 @@ export default function Navbar({ user, isSidebarOpen, setIsSidebarOpen }) {
 									fontSize="0.85rem"
 									sx={{ color: theme.palette.secondary[100] }}
 								>
-									{/* {user.name} */}
+									{user.name}
 								</Typography>
 								<Typography
 									fontSize="0.75rem"
 									sx={{ color: theme.palette.secondary[200] }}
 								>
-									{/* {user.occupation} */}
+									{user.occupation}
 								</Typography>
 							</Box>
 							<ArrowDropDownOutlined
