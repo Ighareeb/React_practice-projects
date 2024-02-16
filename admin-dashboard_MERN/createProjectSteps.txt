@@ -36,3 +36,7 @@ TESTED - data fetched OK forgot to add response in controller
 fixed navbar UI - removed a <Box> that was wrapping and causing the issue TEST UI OK
 
 SERVER - completed created all schemas models for the project for DB /server/models/*-[AffiliateStat, OverAllStat, Product, ProductStat, Transaction].js
+
+SERVER - completed all routes files + utility functions in the controller folder for those routes:
+server/routes/(general, client, management, sales).js
+server/controllers/(general, client, management, sales).js
