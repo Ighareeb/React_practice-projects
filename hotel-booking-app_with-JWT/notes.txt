@@ -7,3 +7,5 @@ routes/auth,hotel,room,user.js
 utils/error, verifyToken.js
 
 setup express server - index.js: import packages, routes + connect to db + setup middleware + started server (listen)
+
+created all models - Hotel, Room, User.js
