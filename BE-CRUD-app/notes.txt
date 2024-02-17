@@ -1,3 +1,20 @@
 installed dependencies: npm i express mongodb mongoose
 created main folder structure - controllers, models, routes and index.js file
 completed index.js file to set up the server
+
+created product.model/route/controller.js files for models, routes, controller folder
+-->product.controller:
+-import product model
+-create CRUD functions
+-->product.route:
+-import product model
+-import controller CRUD functions
+
+
+
+
+
+
+
+
+
