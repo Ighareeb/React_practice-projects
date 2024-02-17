@@ -1,0 +1,7 @@
+installed dependencies - npm i bcryptjs cookie-parser cors dotenv express jsonwebtoken mongoose nodemon
+created folders/files
+index.js, .env, .gitignore
+controllers/auth,hotel,room,user.js
+models/Hotel, Room, User.js
+routes/auth,hotel,room,user.js
+utils/error, verifyToken.js
