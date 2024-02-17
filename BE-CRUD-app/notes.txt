@@ -1,0 +1,3 @@
+installed dependencies: npm i express mongodb mongoose
+created main folder structure - controllers, models, routes and index.js file
+completed index.js file to set up the server
