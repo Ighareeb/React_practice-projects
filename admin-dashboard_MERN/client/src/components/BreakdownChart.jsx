@@ -1,14 +1,13 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
-import { Box, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Box, Typography, useTheme } from '@mui/material';
 import { useGetSalesQuery } from 'state/api';
 
-export default function BreakdownChart({ isDashboard = false }) {
+const BreakdownChart = ({ isDashboard = false }) => {
 	const { data, isLoading } = useGetSalesQuery();
 	const theme = useTheme();
 
-	if (!data || isLoading) return 'Loading data for Breakdown Piechart...';
+	if (!data || isLoading) return 'Loading...';
 
 	const colors = [
 		theme.palette.secondary[500],
@@ -16,17 +15,18 @@ export default function BreakdownChart({ isDashboard = false }) {
 		theme.palette.secondary[300],
 		theme.palette.secondary[500],
 	];
-	const formattedData = Object.entries(data.salesByCategory).map(
-		([category, sales], i) => ({
-			id: category,
-			label: category,
-			value: sales,
-			color: colors[i],
-		}),
-	);
+	const formattedData = data.salesByCategory
+		? Object.entries(data.salesByCategory).map(([category, sales], i) => ({
+				id: category,
+				label: category,
+				value: sales,
+				color: colors[i],
+		  }))
+		: [];
+
 	return (
 		<Box
-			height={isDashboard ? '400px' : '100px'}
+			height={isDashboard ? '400px' : '100%'}
 			width={undefined}
 			minHeight={isDashboard ? '325px' : undefined}
 			minWidth={isDashboard ? '325px' : undefined}
@@ -135,4 +135,6 @@ export default function BreakdownChart({ isDashboard = false }) {
 			</Box>
 		</Box>
 	);
-}
+};
+
+export default BreakdownChart;

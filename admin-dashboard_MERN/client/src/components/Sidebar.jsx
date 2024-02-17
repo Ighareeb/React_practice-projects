@@ -188,7 +188,7 @@ export default function SideBar({
 											>
 												{icon}
 											</ListItemIcon>
-											<ListItemText primart={text} />
+											<ListItemText primary={text} />
 											{active === lcText && (
 												<ChevronRightOutlined sx={{ ml: 'auto' }} />
 											)}

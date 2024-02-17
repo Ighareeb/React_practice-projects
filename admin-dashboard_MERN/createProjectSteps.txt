@@ -44,7 +44,7 @@ server/controllers/(general, client, management, sales).js
 SERVER - COMPLETED - added data imports for remaining routes and controllers + added remaining data insertion to DB mongoose.connect
 --> checked DB ALL DATA INSERTED OK!
 
-CLIENT --> started working on src/components/ 
+CLIENT --> started working on src/components/ (that will be used in scenes i.e. pages/UI display)
 BreakdownChart.jsx
 DataGridCustomColumnMenu.jsx
 DataGridCustomToolbar.jsx
@@ -52,3 +52,10 @@ Header.jsx
 OverviewChart.jsx
 StatBox.jsx
 ++ added state/api queries used in the components
+
+PROJECT COMPLETE - issues with breakdown page as some of the x-grid components are not available any more so need to think of different solution
+CLIENT - 
+added state/geoData.js
+completed all pages for App.js path ===> src/scenes/{path}/index.jsx files
+TESTED - ALL PAGES + DB LOADING OK!
+
