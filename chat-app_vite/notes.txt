@@ -2,3 +2,7 @@ STARTED PROJECT react/vipe Chat App
 create vite project and installed dependencies - npm i react-router-dom swiper timeago.js uuid
 created folder structure and cleaned up defaults
 added folders - assets, components, config, context, data, pages, services
+
+added data/Messages.js - dummy data + all assets/css files
+completed App.jsx - imported components, context and set up react-router
+added fontawesome to index.html + set CORS to anonymous (browser sends req with CORS but no credentials) + no referrer policy set (can't see where req being sent from)
