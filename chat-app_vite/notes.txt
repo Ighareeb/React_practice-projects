@@ -22,4 +22,4 @@ created context files - ( 1.Reducer, 2.Actions,
 
 completed remaining component files - Profile, Sidebar, Content
 
-<services- context - pages> 
+< pages> 
