@@ -23,3 +23,5 @@ created context files - ( 1.Reducer, 2.Actions,
 completed remaining component files - Profile, Sidebar, Content
 
 created pages/(Login, Messenger, Register) .jsx
+
+*need to link to firebase
