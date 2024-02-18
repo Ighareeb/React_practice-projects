@@ -6,3 +6,9 @@ added folders - assets, components, config, context, data, pages, services
 added data/Messages.js - dummy data + all assets/css files
 completed App.jsx - imported components, context and set up react-router
 added fontawesome to index.html + set CORS to anonymous (browser sends req with CORS but no credentials) + no referrer policy set (can't see where req being sent from)
+
+completed global.css - root color variables, scrollbar settings, button, row/column, icons and base defaults (imported in main.jsx)
+added .env file for firebase config (note not activated) will set up later
+created config/firebase
+
+components - services- context - pages
