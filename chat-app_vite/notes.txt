@@ -11,4 +11,8 @@ completed global.css - root color variables, scrollbar settings, button, row/col
 added .env file for firebase config (note not activated) will set up later
 created config/firebase
 
-components - services- context - pages
+created component files - /components/(Avatar, ChatItem, ContactItem,  ImageSlider, InfoContainer, Message, ).jsx
+
+added all assets/css files
+
+<services- context - pages> components Profile, Sidebar, Content
