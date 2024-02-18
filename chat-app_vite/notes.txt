@@ -15,4 +15,11 @@ created component files - /components/(Avatar, ChatItem, ContactItem,  ImageSlid
 
 added all assets/css files
 
-<services- context - pages> components Profile, Sidebar, Content
+created context files - ( 1.Reducer, 2.Actions, 
+{created services/chatServices & authServices.js - will have util functions for the reducers} 
+3.Context).jsx 
+
+
+completed remaining component files - Profile, Sidebar, Content
+
+<services- context - pages> 
