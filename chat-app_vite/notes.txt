@@ -1,0 +1,4 @@
+STARTED PROJECT react/vipe Chat App
+create vite project and installed dependencies - npm i react-router-dom swiper timeago.js uuid
+created folder structure and cleaned up defaults
+added folders - assets, components, config, context, data, pages, services
