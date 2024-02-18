@@ -22,4 +22,4 @@ created context files - ( 1.Reducer, 2.Actions,
 
 completed remaining component files - Profile, Sidebar, Content
 
-< pages> 
+created pages/(Login, Messenger, Register) .jsx
