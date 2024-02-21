@@ -11,3 +11,10 @@ npx tailwindcss init + content:["./index.html", "./src/**/*.{js,ts,jsx,tsx}",] i
 to src/index.css
 + added postcss.config.js file with plugin exports config
 + added proxy config in vite.config.js
+
+installed dependeinces for BE (in the main mern-auth-practice-app folder)
+npm i bcryptjs cookie-parser dotenv express jsonwebtoken mongoose nodemon
++ added "type": "module" to package.json
+CLIENT: added folders: components, pages, redux
+created components files [Header, OAuth, PrivateRoute].jsx
+*OAuth not completed need to work on redux store and firebase first
