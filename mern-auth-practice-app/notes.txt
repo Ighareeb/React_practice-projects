@@ -21,7 +21,10 @@ created components files [Header, OAuth, PrivateRoute].jsx
 
 created redux/user/userSlice.js and redux/store.js
 
-
 created src/pages [About, Home, Profile, SignIn, SignUp].jsx - profile,SignIn SignUp not completed
 completed main.jsx file - (wrapped App.jsx with store provider and persistor)
 completed App.jsx -react router setup for routes and added components to render
+
+API folder - created folders controllers, models, routes, utils and index.json
+created models/user.model.js (mongoose schema)
+index.js --> started setting up express server and database connection [will complete after finished routes] 
