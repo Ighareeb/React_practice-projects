@@ -18,3 +18,5 @@ npm i bcryptjs cookie-parser dotenv express jsonwebtoken mongoose nodemon
 CLIENT: added folders: components, pages, redux
 created components files [Header, OAuth, PrivateRoute].jsx
 *OAuth not completed need to work on redux store and firebase first
+
+created redux/user/userSlice.js and redux/store.js
