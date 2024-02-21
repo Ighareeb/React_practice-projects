@@ -1,0 +1,13 @@
+STARTED MERN-AUTH-PRACTICE-PROJECT: 
+-created client(FE), api(BE) folders
+-CLIENT: added dependencies + added "type": "module" to package.json
+npm i react-router-dom react-redux redux-persist firebase @reduxjs/toolkit
+https://tailwindcss.com/docs/installation/using-postcss
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init + content:["./index.html", "./src/**/*.{js,ts,jsx,tsx}",] in tailwindconfig.css + 
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+to src/index.css
++ added postcss.config.js file with plugin exports config
++ added proxy config in vite.config.js
