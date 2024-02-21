@@ -20,3 +20,8 @@ created components files [Header, OAuth, PrivateRoute].jsx
 *OAuth not completed need to work on redux store and firebase first
 
 created redux/user/userSlice.js and redux/store.js
+
+
+created src/pages [About, Home, Profile, SignIn, SignUp].jsx - profile,SignIn SignUp not completed
+completed main.jsx file - (wrapped App.jsx with store provider and persistor)
+completed App.jsx -react router setup for routes and added components to render
