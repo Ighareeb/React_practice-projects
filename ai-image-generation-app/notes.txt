@@ -5,3 +5,6 @@ setup App.jsx react-router + added skeleton page/files...
 
 added utils/index.js withj getRandomPrompt(), downloadImage() util functions
 created components for pages - Card, FormField, Loader
+
+completed all pages for client
+CLIENT COMPLETED

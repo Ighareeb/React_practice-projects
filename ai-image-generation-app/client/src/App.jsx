@@ -3,8 +3,6 @@ import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import { logo } from './assets';
 import { Home, CreatePost } from './page';
 
-import './App.css';
-
 function App() {
 	return (
 		<BrowserRouter>
