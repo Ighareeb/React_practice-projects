@@ -8,3 +8,8 @@ created components for pages - Card, FormField, Loader
 
 completed all pages for client
 CLIENT COMPLETED
+
+SERVER - npm init (added type: module) + added dependencies npm i cloudinary dotenv express cors mongoose openai nodemon
++ npm i -D eslint eslint-config-airbnb-base eslint-plugin-import
+created folder and files index.js(server) , mongodb/schema(models) and connect.js, routes folder
+completed PostSchema model and connect.js in mongodb folder
