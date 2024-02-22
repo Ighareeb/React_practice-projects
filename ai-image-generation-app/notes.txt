@@ -2,3 +2,6 @@ START PROJECT MERN-AI-image-generation-app
 created client and set up tailwind + dependencies (npm i react-router-dom file-saver) + removed defaults and did basic setup for main folders. 
 added constant/index.js with prompts for the app
 setup App.jsx react-router + added skeleton page/files...
+
+added utils/index.js withj getRandomPrompt(), downloadImage() util functions
+created components for pages - Card, FormField, Loader
