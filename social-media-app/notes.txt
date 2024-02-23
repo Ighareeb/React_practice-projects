@@ -10,3 +10,7 @@ added global.css
 
 setup BrowserRouter, QueryProvider and AuthProvider in src/main.tsx
 setup routes in src/App.tsx
+
+added hook/useDoubounce.ts
+created UI components src/components/ui
++ added src/lib/utils for cn (clsx--> utility for managing CSS class names), convertFileToUrl, date formatting and checkIsLiked helper functions
