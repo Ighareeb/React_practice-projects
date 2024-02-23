@@ -13,3 +13,5 @@ SERVER - npm init (added type: module) + added dependencies npm i cloudinary dot
 + npm i -D eslint eslint-config-airbnb-base eslint-plugin-import
 created folder and files index.js(server) , mongodb/schema(models) and connect.js, routes folder
 completed PostSchema model and connect.js in mongodb folder
+
+SERVER COMPLETED - finished routes and index.js (server) - note: did not set up mongoDB but included code for setup so it works
