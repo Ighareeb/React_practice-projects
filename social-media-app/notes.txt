@@ -3,8 +3,10 @@ added dependencies
 npm i:
 @hookform/resolvers @radix-ui/react-label @radix-ui/react-slot @radix-ui/react-tabs @radix-ui/react-toast @tanstack/react-query @tanstack/react-query-devtools appwrite attr-accept class-variance-authority clsx  lucide-react react-dropzone react-hook-form react-intersection-observer react-router-dom solidjs-dropzone tailwind-merge tailwindcss-animate zod eslint-config-prettier eslint-config-standard eslint-plugin-tailwindcss
 npm i -D @types/node
-
 + added constants (bottom and top bar links === imgurl, route, label) + public assets (icons, images used in app)
 + type.index.ts (schema for navlinks, user, new user, update user, new post, update post)
 added global.css
 + added components.json file for project config
+
+setup BrowserRouter, QueryProvider and AuthProvider in src/main.tsx
+setup routes in src/App.tsx
