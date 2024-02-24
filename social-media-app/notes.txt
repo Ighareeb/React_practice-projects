@@ -22,4 +22,6 @@ src/lib/appwrite === CRUD functions for auth(sign-in/out and saving user), posts
 https://appwrite.io/docs/references appwrite API reference
 Initial SET UP APPWRITE database with users, posts and saves collections + storage (added to .env) [NOT TESTED YET]
 
+completed src/lib/react-query files - queries.ts QueryProvider.tsx queryKeys.ts
+
 completed remaining src/components/shared files index.ts, (leftsidebar, loader, postcard, poststats, profileuploader, topbar, usercard).tsx  

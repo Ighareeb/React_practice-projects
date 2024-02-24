@@ -64,7 +64,7 @@ export async function saveUserToDB(user: {
 }
 
 //----------SIGN IN----------
-export async function singInAccount(user: { email: string; password: string }) {
+export async function signInAccount(user: { email: string; password: string }) {
   try {
     const session = await account.createEmailPasswordSession(
       user.email,
@@ -428,7 +428,7 @@ export async function getUsers(limit?: number) {
   }
 }
 //----------GET USER BY ID----------
-export async function getUserById(userId: string) {
+export async function getUsersById(userId: string) {
   try {
     const user = await databases.getDocument(
       appwriteConfig.databaseId,
