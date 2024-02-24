@@ -14,3 +14,12 @@ setup routes in src/App.tsx
 added hook/useDoubounce.ts
 created UI components src/components/ui
 + added src/lib/utils for cn (clsx--> utility for managing CSS class names), convertFileToUrl, date formatting and checkIsLiked helper functions
+
+completed  some src/components/shared files-->  Bottombar.tsx, FileUploader.tsx, GridPostList.tsx
+completed src/context/AuthContext.tsx
+completed src/lib/(appwrite & config).ts 
+src/lib/appwrite === CRUD functions for auth(sign-in/out and saving user), posts, files, users
+https://appwrite.io/docs/references appwrite API reference
+Initial SET UP APPWRITE database with users, posts and saves collections + storage (added to .env) [NOT TESTED YET]
+
+completed remaining src/components/shared files index.ts, (leftsidebar, loader, postcard, poststats, profileuploader, topbar, usercard).tsx  
