@@ -183,7 +183,7 @@ export const useSavePost = () => {
   });
 };
 
-export const useDeletedSavedPost = () => {
+export const useDeleteSavedPost = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (savedRecordId: string) => deleteSavedPost(savedRecordId),

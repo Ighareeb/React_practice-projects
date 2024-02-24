@@ -24,4 +24,10 @@ Initial SET UP APPWRITE database with users, posts and saves collections + stora
 
 completed src/lib/react-query files - queries.ts QueryProvider.tsx queryKeys.ts
 
-completed remaining src/components/shared files index.ts, (leftsidebar, loader, postcard, poststats, profileuploader, topbar, usercard).tsx  
+completed remaining src/components/shared files index.ts, (leftsidebar, loader, postcard, poststats, profileuploader, topbar, usercard).tsx
+
+*comonents/forms
+
+*_auth + _auth forms folder
+
+*_root + _root/pages folder
