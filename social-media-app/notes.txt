@@ -30,4 +30,6 @@ completed /src/lib/validation/index.ts + components/forms/PostForm.tsx
 
 completed /src/_auth folder --> forms/signin+signupform.tsx and _auth/AuthLayout.tsx
 
-*_root + _root/pages folder
+completed /src/_root folder --> _root/RootLayout.tsx +
+pages/ index.ts + (AllUsers, CreatePost, EditPost, Explore, Home, LikedPosts, PostDetails, Profile, Saved, UpdateProfile).tsx
+fixed imports for main.tsx and App.tsx

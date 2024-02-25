@@ -2,7 +2,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { INavLink } from "@/types/index.ts";
 import { sidebarLinks } from "@/constants/index.ts";
-import { useUserContext, INITIAL_USER } from "@/context/AuthContext.ts";
+import { useUserContext, INITIAL_USER } from "@/context/AuthContext.tsx";
 import { Button } from "../ui/button.tsx";
 import { useSignOutAccount } from "@/lib/react-query/queries.ts";
 import Loader from "./Loader.tsx";

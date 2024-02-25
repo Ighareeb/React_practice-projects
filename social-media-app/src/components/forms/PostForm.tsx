@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Models } from "appwrite";
 import { useToast } from "../ui/use-toast.ts";
 import { useUserContext } from "@/context/AuthContext.tsx";
-import { FileUploader, Loader } from "@/components/shared/index.tsx";
+import { FileUploader, Loader } from "@/components/shared/index.ts";
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queries.ts";
 import { PostValidation } from "@/lib/validation/index.ts";
 import {

@@ -10,11 +10,11 @@ import {
   PostDetails,
   UpdateProfile,
   AllUsers,
-} from "@/_root/pages";
-import AuthLayout from "./_auth/AuthLayout";
-import RootLayout from "./_root/RootLayout";
-import SignupForm from "@/_auth/forms/SignupForm";
-import SigninForm from "@/_auth/forms/SigninForm";
+} from "@/_root/pages/index.ts";
+import AuthLayout from "./_auth/AuthLayout.tsx";
+import RootLayout from "./_root/RootLayout.tsx";
+import SignupForm from "@/_auth/forms/SignUpForm.tsx";
+import SigninForm from "@/_auth/forms/SigninForm.tsx";
 import { Toaster } from "@/components/ui/toaster.tsx";
 
 import "./global.css";
