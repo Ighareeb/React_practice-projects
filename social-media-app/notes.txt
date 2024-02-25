@@ -28,6 +28,6 @@ completed remaining src/components/shared files index.ts, (leftsidebar, loader, 
 
 completed /src/lib/validation/index.ts + components/forms/PostForm.tsx
 
-*_auth + _auth forms folder
+completed /src/_auth folder --> forms/signin+signupform.tsx and _auth/AuthLayout.tsx
 
 *_root + _root/pages folder
