@@ -1,15 +1,17 @@
 import { Models } from "appwrite";
 
-import { GridPostList, Loader } from "@/components/shared/index.ts";
-import { useGetCurrentUser } from "@/lib/react-query/queries.ts";
+import { GridPostList, Loader } from "@/components/shared";
+import { useGetCurrentUser } from "@/lib/react-query/queries";
 
-export default function Saved() {
+const Saved = () => {
   const { data: currentUser } = useGetCurrentUser();
 
   const savePosts = currentUser?.save
     .map((savePost: Models.Document) => ({
       ...savePost.post,
-      creator: { imageUrl: currentUser.imageUrl },
+      creator: {
+        imageUrl: currentUser.imageUrl,
+      },
     }))
     .reverse();
 
@@ -39,4 +41,6 @@ export default function Saved() {
       )}
     </div>
   );
-}
+};
+
+export default Saved;

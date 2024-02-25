@@ -1,18 +1,18 @@
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
+{
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  extends: [
+  "extends": [
     "standard",
     "plugin:react/recommended",
     "plugin:tailwindcss/recommended",
-    "prettier",
+    "prettier"
   ],
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  plugins: ["react"],
-  rules: {},
-};
+  "plugins": ["react"],
+  "rules": {}
+}

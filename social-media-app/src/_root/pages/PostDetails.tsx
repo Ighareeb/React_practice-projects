@@ -1,18 +1,18 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-import { Button } from "@/components/ui/button.tsx";
-import { Loader } from "@/components/shared/index.ts";
-import { GridPostList, PostStats } from "@/components/shared/index.ts";
+import { Button } from "@/components/ui";
+import { Loader } from "@/components/shared";
+import { GridPostList, PostStats } from "@/components/shared";
 
 import {
   useGetPostById,
   useGetUserPosts,
   useDeletePost,
-} from "@/lib/react-query/queries.ts";
-import { multiFormatDateString } from "@/lib/utils.ts";
-import { useUserContext } from "@/context/AuthContext.tsx";
+} from "@/lib/react-query/queries";
+import { multiFormatDateString } from "@/lib/utils";
+import { useUserContext } from "@/context/AuthContext";
 
-export default function PostDetails() {
+const PostDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useUserContext();
@@ -35,7 +35,6 @@ export default function PostDetails() {
   return (
     <div className="post_details-container">
       <div className="hidden md:flex max-w-5xl w-full">
-        {/* back buttin to navigate to previous page */}
         <Button
           onClick={() => navigate(-1)}
           variant="ghost"
@@ -59,7 +58,7 @@ export default function PostDetails() {
             alt="creator"
             className="post_details-img"
           />
-          {/* render card with post details --> image from post, link to profile of creator(include profile pic, name, creation date and location) */}
+
           <div className="post_details-info">
             <div className="flex-between w-full">
               <Link
@@ -88,7 +87,7 @@ export default function PostDetails() {
                   </div>
                 </div>
               </Link>
-              {/* Edit and Delete post button (only visible if current user === post creator) */}
+
               <div className="flex-center gap-4">
                 <Link
                   to={`/update-post/${post?.$id}`}
@@ -104,7 +103,7 @@ export default function PostDetails() {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={`post_details-delete_btn ${
+                  className={`ost_details-delete_btn ${
                     user.id !== post?.creator.$id && "hidden"
                   }`}>
                   <img
@@ -118,7 +117,7 @@ export default function PostDetails() {
             </div>
 
             <hr className="border w-full border-dark-4/80" />
-            {/* post tags and captions */}
+
             <div className="flex flex-col flex-1 w-full small-medium lg:base-regular">
               <p>{post?.caption}</p>
               <ul className="flex gap-1 mt-2">
@@ -131,14 +130,14 @@ export default function PostDetails() {
                 ))}
               </ul>
             </div>
-            {/* post stats */}
+
             <div className="w-full">
               <PostStats post={post} userId={user.id} />
             </div>
           </div>
         </div>
       )}
-      {/* display related posts */}
+
       <div className="w-full max-w-5xl">
         <hr className="border w-full border-dark-4/80" />
 
@@ -153,4 +152,6 @@ export default function PostDetails() {
       </div>
     </div>
   );
-}
+};
+
+export default PostDetails;

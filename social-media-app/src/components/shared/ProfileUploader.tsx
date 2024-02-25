@@ -1,16 +1,14 @@
-import { convertFilesToUrl } from "@/lib/utils.ts";
 import { useCallback, useState } from "react";
-import { useDropzone, FileWithPath } from "react-dropzone";
+import { FileWithPath, useDropzone } from "react-dropzone";
+
+import { convertFileToUrl } from "@/lib/utils";
 
 type ProfileUploaderProps = {
-  fieldChange: (file: File[]) => void;
+  fieldChange: (files: File[]) => void;
   mediaUrl: string;
 };
 
-export default function ProfileUploader({
-  fieldChange,
-  mediaUrl,
-}: ProfileUploaderProps) {
+const ProfileUploader = ({ fieldChange, mediaUrl }: ProfileUploaderProps) => {
   const [file, setFile] = useState<File[]>([]);
   const [fileUrl, setFileUrl] = useState<string>(mediaUrl);
 
@@ -18,7 +16,7 @@ export default function ProfileUploader({
     (acceptedFiles: FileWithPath[]) => {
       setFile(acceptedFiles);
       fieldChange(acceptedFiles);
-      setFileUrl(convertFilesToUrl(acceptedFiles[0]));
+      setFileUrl(convertFileToUrl(acceptedFiles[0]));
     },
     [file]
   );
@@ -26,7 +24,7 @@ export default function ProfileUploader({
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
-      "image/*": [".png", ".jpg", ".jpeg"],
+      "image/*": [".png", ".jpeg", ".jpg"],
     },
   });
 
@@ -40,10 +38,12 @@ export default function ProfileUploader({
           alt="image"
           className="h-24 w-24 rounded-full object-cover object-top"
         />
-        <p className="text-primary-500 small-regular md:base-semibold">
+        <p className="text-primary-500 small-regular md:bbase-semibold">
           Change profile photo
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default ProfileUploader;

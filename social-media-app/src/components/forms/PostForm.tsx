@@ -1,13 +1,9 @@
 import * as z from "zod";
+import { Models } from "appwrite";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Models } from "appwrite";
-import { useToast } from "../ui/use-toast.ts";
-import { useUserContext } from "@/context/AuthContext.tsx";
-import { FileUploader, Loader } from "@/components/shared/index.ts";
-import { useCreatePost, useUpdatePost } from "@/lib/react-query/queries.ts";
-import { PostValidation } from "@/lib/validation/index.ts";
+
 import {
   Form,
   FormControl,
@@ -18,14 +14,19 @@ import {
   Button,
   Input,
   Textarea,
-} from "@/components/ui/index.ts";
+} from "@/components/ui";
+import { PostValidation } from "@/lib/validation";
+import { useToast } from "@/components/ui/use-toast";
+import { useUserContext } from "@/context/AuthContext";
+import { FileUploader, Loader } from "@/components/shared";
+import { useCreatePost, useUpdatePost } from "@/lib/react-query/queries";
 
 type PostFormProps = {
   post?: Models.Document;
   action: "Create" | "Update";
 };
 
-export default function PostForm({ post, action }: PostFormProps) {
+const PostForm = ({ post, action }: PostFormProps) => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { user } = useUserContext();
@@ -34,20 +35,20 @@ export default function PostForm({ post, action }: PostFormProps) {
     defaultValues: {
       caption: post ? post?.caption : "",
       file: [],
-      location: post ? post?.location : "",
-      tags: post ? post?.tags.join(",") : "",
+      location: post ? post.location : "",
+      tags: post ? post.tags.join(",") : "",
     },
   });
 
-  //Query
+  // Query
   const { mutateAsync: createPost, isLoading: isLoadingCreate } =
     useCreatePost();
   const { mutateAsync: updatePost, isLoading: isLoadingUpdate } =
     useUpdatePost();
 
-  //Handle Submit
+  // Handler
   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
-    //Action === update
+    // ACTION = UPDATE
     if (post && action === "Update") {
       const updatedPost = await updatePost({
         ...value,
@@ -58,12 +59,13 @@ export default function PostForm({ post, action }: PostFormProps) {
 
       if (!updatedPost) {
         toast({
-          title: `${action} post failed`,
+          title: `${action} post failed. Please try again.`,
         });
       }
       return navigate(`/posts/${post.$id}`);
     }
-    //Action === create
+
+    // ACTION = CREATE
     const newPost = await createPost({
       ...value,
       userId: user.id,
@@ -71,7 +73,7 @@ export default function PostForm({ post, action }: PostFormProps) {
 
     if (!newPost) {
       toast({
-        title: `${action} post failed`,
+        title: `${action} post failed. Please try again.`,
       });
     }
     navigate("/");
@@ -155,7 +157,6 @@ export default function PostForm({ post, action }: PostFormProps) {
           <Button
             type="button"
             className="shad-button_dark_4"
-            // navigate to previous page
             onClick={() => navigate(-1)}>
             Cancel
           </Button>
@@ -170,4 +171,6 @@ export default function PostForm({ post, action }: PostFormProps) {
       </form>
     </Form>
   );
-}
+};
+
+export default PostForm;

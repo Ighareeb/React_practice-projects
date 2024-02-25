@@ -1,13 +1,13 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
-import { INavLink } from "@/types/index.ts";
-import { sidebarLinks } from "@/constants/index.ts";
-import { useUserContext, INITIAL_USER } from "@/context/AuthContext.tsx";
-import { Button } from "../ui/button.tsx";
-import { useSignOutAccount } from "@/lib/react-query/queries.ts";
-import Loader from "./Loader.tsx";
+import { INavLink } from "@/types";
+import { sidebarLinks } from "@/constants";
+import { Loader } from "@/components/shared";
+import { Button } from "@/components/ui/button";
+import { useSignOutAccount } from "@/lib/react-query/queries";
+import { useUserContext, INITIAL_USER } from "@/context/AuthContext";
 
-export default function LeftSidebar() {
+const LeftSidebar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { user, setUser, setIsAuthenticated, isLoading } = useUserContext();
@@ -26,7 +26,7 @@ export default function LeftSidebar() {
 
   return (
     <nav className="leftsidebar">
-      <div className="flex flex-col gal-11">
+      <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
           <img
             src="/assets/images/logo.svg"
@@ -35,6 +35,7 @@ export default function LeftSidebar() {
             height={36}
           />
         </Link>
+
         {isLoading || !user.email ? (
           <div className="h-14">
             <Loader />
@@ -69,7 +70,7 @@ export default function LeftSidebar() {
                   <img
                     src={link.imgURL}
                     alt={link.label}
-                    className={`group-hour:invert-white ${
+                    className={`group-hover:invert-white ${
                       isActive && "invert-white"
                     }`}
                   />
@@ -90,4 +91,6 @@ export default function LeftSidebar() {
       </Button>
     </nav>
   );
-}
+};
+
+export default LeftSidebar;

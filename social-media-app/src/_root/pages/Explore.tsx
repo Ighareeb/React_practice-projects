@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { Input } from "@/components/ui/input.tsx";
-import useDebounce from "@/hooks/useDebounce.ts";
-import { GridPostList, Loader } from "@/components/shared/index.ts";
-import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries.ts";
+import { Input } from "@/components/ui";
+import useDebounce from "@/hooks/useDebounce";
+import { GridPostList, Loader } from "@/components/shared";
+import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries";
 
 export type SearchResultProps = {
   isSearchFetching: boolean;
   searchedPosts: any;
 };
 
-const SearchResults = ({
-  isSearchFetching,
-  searchedPosts,
-}: SearchResultProps) => {
+const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultProps) => {
   if (isSearchFetching) {
     return <Loader />;
   } else if (searchedPosts && searchedPosts.documents.length > 0) {
@@ -26,14 +23,13 @@ const SearchResults = ({
   }
 };
 
-export default function Explore() {
+const Explore = () => {
   const { ref, inView } = useInView();
   const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
 
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearch = useDebounce(searchValue, 500);
-  const { data: searchedPosts, isFetching: isSearchFetching } =
-    useSearchPosts(debouncedSearch);
+  const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedSearch);
 
   useEffect(() => {
     if (inView && !searchValue) {
@@ -49,13 +45,11 @@ export default function Explore() {
     );
 
   const shouldShowSearchResults = searchValue !== "";
-  const shouldShowPosts =
-    !shouldShowSearchResults &&
+  const shouldShowPosts = !shouldShowSearchResults && 
     posts.pages.every((item) => item.documents.length === 0);
 
   return (
     <div className="explore-container">
-      {/* search for posts  */}
       <div className="explore-inner_container">
         <h2 className="h3-bold md:h2-bold w-full">Search Posts</h2>
         <div className="flex gap-1 px-4 w-full rounded-lg bg-dark-4">
@@ -77,7 +71,7 @@ export default function Explore() {
           />
         </div>
       </div>
-      {/* div button that shows recent popular posts + UI container */}
+
       <div className="flex-between w-full max-w-5xl mt-16 mb-7">
         <h3 className="body-bold md:h3-bold">Popular Today</h3>
 
@@ -106,7 +100,7 @@ export default function Explore() {
           ))
         )}
       </div>
-      {/* pagination */}
+
       {hasNextPage && !searchValue && (
         <div ref={ref} className="mt-10">
           <Loader />
@@ -114,4 +108,6 @@ export default function Explore() {
       )}
     </div>
   );
-}
+};
+
+export default Explore;

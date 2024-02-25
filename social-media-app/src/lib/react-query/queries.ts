@@ -5,7 +5,7 @@ import {
   useInfiniteQuery,
 } from "@tanstack/react-query";
 
-import { QUERY_KEYS } from "./queryKeys.ts";
+import { QUERY_KEYS } from "@/lib/react-query/queryKeys";
 import {
   createUserAccount,
   signInAccount,
@@ -18,31 +18,33 @@ import {
   getUserPosts,
   deletePost,
   likePost,
-  getUsersById,
+  getUserById,
   updateUser,
   getRecentPosts,
   getInfinitePosts,
   searchPosts,
   savePost,
   deleteSavedPost,
-} from "@/lib/appwrite/api.ts";
-
-import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types/index.ts";
+} from "@/lib/appwrite/api";
+import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 
 // ============================================================
 // AUTH QUERIES
 // ============================================================
+
 export const useCreateUserAccount = () => {
   return useMutation({
     mutationFn: (user: INewUser) => createUserAccount(user),
   });
 };
+
 export const useSignInAccount = () => {
   return useMutation({
     mutationFn: (user: { email: string; password: string }) =>
       signInAccount(user),
   });
 };
+
 export const useSignOutAccount = () => {
   return useMutation({
     mutationFn: signOutAccount,
@@ -52,20 +54,21 @@ export const useSignOutAccount = () => {
 // ============================================================
 // POST QUERIES
 // ============================================================
+
 export const useGetPosts = () => {
   return useInfiniteQuery({
     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
     queryFn: getInfinitePosts as any,
     getNextPageParam: (lastPage: any) => {
-      //if not data === no more pages
+      // If there's no data, there are no more pages.
       if (lastPage && lastPage.documents.length === 0) {
         return null;
       }
-      //use $id of last document as cursor
+
+      // Use the $id of the last document as the cursor.
       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
       return lastId;
     },
-    initialPageParam: null, // Add this line
   });
 };
 
@@ -79,7 +82,7 @@ export const useSearchPosts = (searchTerm: string) => {
 
 export const useGetRecentPosts = () => {
   return useQuery({
-    queryKey: [QUERY_KEYS.SEARCH_POSTS],
+    queryKey: [QUERY_KEYS.GET_RECENT_POSTS],
     queryFn: getRecentPosts,
   });
 };
@@ -204,6 +207,7 @@ export const useDeleteSavedPost = () => {
 // ============================================================
 // USER QUERIES
 // ============================================================
+
 export const useGetCurrentUser = () => {
   return useQuery({
     queryKey: [QUERY_KEYS.GET_CURRENT_USER],
@@ -218,10 +222,10 @@ export const useGetUsers = (limit?: number) => {
   });
 };
 
-export const useGetUsersById = (userId: string) => {
+export const useGetUserById = (userId: string) => {
   return useQuery({
     queryKey: [QUERY_KEYS.GET_USER_BY_ID, userId],
-    queryFn: () => getUsersById(userId),
+    queryFn: () => getUserById(userId),
     enabled: !!userId,
   });
 };
@@ -231,6 +235,9 @@ export const useUpdateUser = () => {
   return useMutation({
     mutationFn: (user: IUpdateUser) => updateUser(user),
     onSuccess: (data) => {
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.GET_CURRENT_USER],
+      });
       queryClient.invalidateQueries({
         queryKey: [QUERY_KEYS.GET_USER_BY_ID, data?.$id],
       });

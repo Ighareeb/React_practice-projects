@@ -1,31 +1,31 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-//1. cn (clsx--> utility for managing CSS class names)
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-//2. convertFilesToUrl (converts files to URL)
-export const convertFilesToUrl = (file: File) => URL.createObjectURL(file);
+export const convertFileToUrl = (file: File) => URL.createObjectURL(file);
 
-//3a. date formatting
-export function formatDataString(dateString: string) {
+export function formatDateString(dateString: string) {
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   };
+
   const date = new Date(dateString);
-  const formattedDate = date.toLocaleDateString("en-GB", options);
+  const formattedDate = date.toLocaleDateString("en-US", options);
 
   const time = date.toLocaleTimeString([], {
     hour: "numeric",
     minute: "2-digit",
   });
+
   return `${formattedDate} at ${time}`;
 }
-//3b.
+
+// 
 export const multiFormatDateString = (timestamp: string = ""): string => {
   const timestampNum = Math.round(new Date(timestamp).getTime() / 1000);
   const date: Date = new Date(timestampNum * 1000);
@@ -39,7 +39,7 @@ export const multiFormatDateString = (timestamp: string = ""): string => {
 
   switch (true) {
     case Math.floor(diffInDays) >= 30:
-      return multiFormatDateString(timestamp);
+      return formatDateString(timestamp);
     case Math.floor(diffInDays) === 1:
       return `${Math.floor(diffInDays)} day ago`;
     case Math.floor(diffInDays) > 1 && diffInDays < 30:
@@ -53,7 +53,6 @@ export const multiFormatDateString = (timestamp: string = ""): string => {
   }
 };
 
-//4. check item like list
 export const checkIsLiked = (likeList: string[], userId: string) => {
   return likeList.includes(userId);
 };

@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { IUser } from "@/types/index.ts";
-import { getCurrentUser } from "@/lib/appwrite/api.ts";
+import { IUser } from "@/types";
+import { getCurrentUser } from "@/lib/appwrite/api";
 
-//setting up context
 export const INITIAL_USER = {
   id: "",
   name: "",
@@ -22,6 +21,7 @@ const INITIAL_STATE = {
   setIsAuthenticated: () => {},
   checkAuthUser: async () => false as boolean,
 };
+
 type IContextType = {
   user: IUser;
   isLoading: boolean;
@@ -33,7 +33,6 @@ type IContextType = {
 
 const AuthContext = createContext<IContextType>(INITIAL_STATE);
 
-//Auth Provider function
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
   const [user, setUser] = useState<IUser>(INITIAL_USER);
@@ -43,23 +42,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const checkAuthUser = async () => {
     setIsLoading(true);
     try {
-      const currentUser = await getCurrentUser();
-      if (currentUser) {
+      const currentAccount = await getCurrentUser();
+      if (currentAccount) {
         setUser({
-          id: currentUser.$id,
-          name: currentUser.name,
-          username: currentUser.username,
-          email: currentUser.email,
-          imageUrl: currentUser.imageUrl,
-          bio: currentUser.bio,
+          id: currentAccount.$id,
+          name: currentAccount.name,
+          username: currentAccount.username,
+          email: currentAccount.email,
+          imageUrl: currentAccount.imageUrl,
+          bio: currentAccount.bio,
         });
         setIsAuthenticated(true);
 
         return true;
       }
+
       return false;
     } catch (error) {
-      console.log(`Error: $(error) user not authenitcated`);
+      console.error(error);
+      return false;
     } finally {
       setIsLoading(false);
     }
@@ -74,21 +75,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     ) {
       navigate("/sign-in");
     }
+
     checkAuthUser();
   }, []);
 
   const value = {
     user,
     setUser,
+    isLoading,
     isAuthenticated,
     setIsAuthenticated,
-    //     checkAuthUser,
-    //  isLoading,
-    // };
-
-    // return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-    checkAuthUser: () => checkAuthUser().then((result) => result || false),
-    isLoading,
+    checkAuthUser,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
-import { Loader } from "@/components/shared/index.ts";
-import { useGetPostById } from "@/lib/react-query/queries.ts";
-import PostForm from "@/components/forms/PostForm.tsx";
 
-export default function EditPost() {
+import { Loader } from "@/components/shared";
+import PostForm from "@/components/forms/PostForm";
+import { useGetPostById } from "@/lib/react-query/queries";
+
+const EditPost = () => {
   const { id } = useParams();
   const { data: post, isLoading } = useGetPostById(id);
 
@@ -32,4 +33,6 @@ export default function EditPost() {
       </div>
     </div>
   );
-}
+};
+
+export default EditPost;

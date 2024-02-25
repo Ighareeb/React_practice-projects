@@ -1,14 +1,15 @@
-import { useUserContext } from "@/context/AuthContext.tsx";
-import { multiFormatDateString } from "@/lib/utils.ts";
 import { Models } from "appwrite";
 import { Link } from "react-router-dom";
-import PostStats from "./PostStats.tsx";
+
+import { PostStats } from "@/components/shared";
+import { multiFormatDateString } from "@/lib/utils";
+import { useUserContext } from "@/context/AuthContext";
 
 type PostCardProps = {
   post: Models.Document;
 };
 
-export default function PostCard({ post }: PostCardProps) {
+const PostCard = ({ post }: PostCardProps) => {
   const { user } = useUserContext();
 
   if (!post.creator) return;
@@ -33,7 +34,7 @@ export default function PostCard({ post }: PostCardProps) {
               {post.creator.name}
             </p>
             <div className="flex-center gap-2 text-light-3">
-              <p className="subtle-semibold lg:small-regular">
+              <p className="subtle-semibold lg:small-regular ">
                 {multiFormatDateString(post.$createdAt)}
               </p>
               •
@@ -60,20 +61,24 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="small-medium lg:base-medium py-5">
           <p>{post.caption}</p>
           <ul className="flex gap-1 mt-2">
-            {post.tags.map((tag: string, index: number) => (
-              <li className="text-light-3 small-regular" key={`${tag}${index}`}>
+            {post.tags.map((tag: string, index: string) => (
+              <li key={`${tag}${index}`} className="text-light-3 small-regular">
                 #{tag}
               </li>
             ))}
           </ul>
         </div>
+
         <img
           src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
           alt="post image"
           className="post-card_img"
         />
       </Link>
+
       <PostStats post={post} userId={user.id} />
     </div>
   );
-}
+};
+
+export default PostCard;

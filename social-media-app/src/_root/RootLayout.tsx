@@ -1,9 +1,10 @@
-import Bottombar from "@/components/shared/Bottombar.tsx";
-import LeftSidebar from "@/components/shared/LeftSidebar.tsx";
-import Topbar from "@/components/shared/Topbar.tsx";
 import { Outlet } from "react-router-dom";
 
-export default function RootLayout() {
+import Topbar from "@/components/shared/Topbar";
+import Bottombar from "@/components/shared/Bottombar";
+import LeftSidebar from "@/components/shared/LeftSidebar";
+
+const RootLayout = () => {
   return (
     <div className="w-full md:flex">
       <Topbar />
@@ -16,4 +17,6 @@ export default function RootLayout() {
       <Bottombar />
     </div>
   );
-}
+};
+
+export default RootLayout;

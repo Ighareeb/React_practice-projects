@@ -1,20 +1,21 @@
-import { checkIsLiked } from "@/lib/utils.ts";
 import { Models } from "appwrite";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+import { checkIsLiked } from "@/lib/utils";
 import {
   useLikePost,
   useSavePost,
   useDeleteSavedPost,
   useGetCurrentUser,
-} from "@/lib/react-query/queries.ts";
+} from "@/lib/react-query/queries";
 
 type PostStatsProps = {
   post: Models.Document;
   userId: string;
 };
 
-export default function PostStats({ post, userId }: PostStatsProps) {
+const PostStats = ({ post, userId }: PostStatsProps) => {
   const location = useLocation();
   const likesList = post.likes.map((user: Models.Document) => user.$id);
 
@@ -23,7 +24,7 @@ export default function PostStats({ post, userId }: PostStatsProps) {
 
   const { mutate: likePost } = useLikePost();
   const { mutate: savePost } = useSavePost();
-  const { mutate: deleteSavedPost } = useDeleteSavedPost();
+  const { mutate: deleteSavePost } = useDeleteSavedPost();
 
   const { data: currentUser } = useGetCurrentUser();
 
@@ -47,6 +48,7 @@ export default function PostStats({ post, userId }: PostStatsProps) {
     } else {
       likesArray.push(userId);
     }
+
     setLikes(likesArray);
     likePost({ postId: post.$id, likesArray });
   };
@@ -55,10 +57,12 @@ export default function PostStats({ post, userId }: PostStatsProps) {
     e: React.MouseEvent<HTMLImageElement, MouseEvent>
   ) => {
     e.stopPropagation();
+
     if (savedPostRecord) {
       setIsSaved(false);
-      return deleteSavedPost(savedPostRecord.$id);
+      return deleteSavePost(savedPostRecord.$id);
     }
+
     savePost({ userId: userId, postId: post.$id });
     setIsSaved(true);
   };
@@ -67,7 +71,6 @@ export default function PostStats({ post, userId }: PostStatsProps) {
     ? "w-full"
     : "";
 
-  //
   return (
     <div
       className={`flex justify-between items-center z-20 ${containerStyles}`}>
@@ -81,9 +84,7 @@ export default function PostStats({ post, userId }: PostStatsProps) {
           alt="like"
           width={20}
           height={20}
-          onClick={(e) => {
-            handleLikePost(e);
-          }}
+          onClick={(e) => handleLikePost(e)}
           className="cursor-pointer"
         />
         <p className="small-medium lg:base-medium">{likes.length}</p>
@@ -96,11 +97,11 @@ export default function PostStats({ post, userId }: PostStatsProps) {
           width={20}
           height={20}
           className="cursor-pointer"
-          onClick={(e) => {
-            handleSavePost(e);
-          }}
+          onClick={(e) => handleSavePost(e)}
         />
       </div>
     </div>
   );
-}
+};
+
+export default PostStats;

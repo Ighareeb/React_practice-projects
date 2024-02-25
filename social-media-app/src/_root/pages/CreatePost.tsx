@@ -1,6 +1,6 @@
-import PostForm from "@/components/forms/PostForm.tsx";
+import PostForm from "@/components/forms/PostForm";
 
-export default function CreatePost() {
+const CreatePost = () => {
   return (
     <div className="flex flex-1">
       <div className="common-container">
@@ -18,4 +18,6 @@ export default function CreatePost() {
       </div>
     </div>
   );
-}
+};
+
+export default CreatePost;

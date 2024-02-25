@@ -10,16 +10,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form.tsx";
-import { useToast } from "@/components/ui/use-toast.ts";
-import { Textarea, Input, Button } from "@/components/ui/index.ts";
-import { ProfileUploader, Loader } from "@/components/shared/index.ts";
+} from "@/components/ui/form";
+import { useToast } from "@/components/ui/use-toast";
+import { Textarea, Input, Button } from "@/components/ui";
+import { ProfileUploader, Loader } from "@/components/shared";
 
-import { ProfileValidation } from "@/lib/validation/index.ts";
-import { useUserContext } from "@/context/AuthContext.tsx";
-import { useGetUsersById, useUpdateUser } from "@/lib/react-query/queries.ts";
+import { ProfileValidation } from "@/lib/validation";
+import { useUserContext } from "@/context/AuthContext";
+import { useGetUserById, useUpdateUser } from "@/lib/react-query/queries";
 
-export default function UpdateProfile() {
+const UpdateProfile = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -36,7 +36,7 @@ export default function UpdateProfile() {
   });
 
   // Queries
-  const { data: currentUser } = useGetUsersById(id || "");
+  const { data: currentUser } = useGetUserById(id || "");
   const { mutateAsync: updateUser, isLoading: isLoadingUpdate } =
     useUpdateUser();
 
@@ -86,7 +86,7 @@ export default function UpdateProfile() {
           />
           <h2 className="h3-bold md:h2-bold text-left w-full">Edit Profile</h2>
         </div>
-        {/* upload profile pricture */}
+
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleUpdate)}
@@ -106,7 +106,7 @@ export default function UpdateProfile() {
                 </FormItem>
               )}
             />
-            {/* text input for name */}
+
             <FormField
               control={form.control}
               name="name"
@@ -120,7 +120,7 @@ export default function UpdateProfile() {
                 </FormItem>
               )}
             />
-            {/* text input for username */}
+
             <FormField
               control={form.control}
               name="username"
@@ -139,7 +139,7 @@ export default function UpdateProfile() {
                 </FormItem>
               )}
             />
-            {/* text input for email */}
+
             <FormField
               control={form.control}
               name="email"
@@ -158,12 +158,10 @@ export default function UpdateProfile() {
                 </FormItem>
               )}
             />
-            {/* text area for user bio */}
+
             <FormField
               control={form.control}
               name="bio"
-              import { FormControl } from 'your-package-name'; // Replace 'your-package-name' with the actual package name
-
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="shad-form_label">Bio</FormLabel>
@@ -177,7 +175,7 @@ export default function UpdateProfile() {
                 </FormItem>
               )}
             />
-            {/* Back and Submit form buttons */}
+
             <div className="flex gap-4 items-center justify-end">
               <Button
                 type="button"
@@ -198,4 +196,6 @@ export default function UpdateProfile() {
       </div>
     </div>
   );
-}
+};
+
+export default UpdateProfile;

@@ -1,27 +1,19 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Link, useNavigate } from "react-router-dom";
-import { useToast } from "@/components/ui/use-toast.ts";
-import { useUserContext } from "@/context/AuthContext.tsx";
-import { SignupValidation } from "@/lib/validation/index.ts";
-import {
-  useCreateUserAccount,
-  useSignInAccount,
-} from "@/lib/react-query/queries.ts";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form.tsx";
-import { Input } from "@/components/ui/input.tsx";
-import { Button } from "@/components/ui/button.tsx";
-import Loader from "@/components/shared/Loader.tsx";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-export default function SignUpForm() {
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Loader from "@/components/shared/Loader";
+import { useToast } from "@/components/ui/use-toast";
+
+import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queries";
+import { SignupValidation } from "@/lib/validation";
+import { useUserContext } from "@/context/AuthContext";
+
+const SignupForm = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
@@ -36,21 +28,18 @@ export default function SignUpForm() {
     },
   });
 
-  //Queries
-  const { mutate: createUserAccount, isLoading: isCreatingAccount } =
-    useCreateUserAccount();
-  const { mutate: signInAccount, isLoading: isSigningInUser } =
-    useSignInAccount();
+  // Queries
+  const { mutateAsync: createUserAccount, isLoading: isCreatingAccount } = useCreateUserAccount();
+  const { mutateAsync: signInAccount, isLoading: isSigningInUser } = useSignInAccount();
 
-  //Handle SignUp submission
+  // Handler
   const handleSignup = async (user: z.infer<typeof SignupValidation>) => {
     try {
       const newUser = await createUserAccount(user);
 
       if (!newUser) {
-        // if (newUser === undefined) {
-        toast({ title: "Sign up failed. Please try again." });
-
+        toast({ title: "Sign up failed. Please try again.", });
+        
         return;
       }
 
@@ -58,12 +47,12 @@ export default function SignUpForm() {
         email: user.email,
         password: user.password,
       });
-      if (!sesion) {
-        // if (session === undefined) {
-        toast({ title: "Something went wrong. Please login your new account" });
 
+      if (!session) {
+        toast({ title: "Something went wrong. Please login your new account", });
+        
         navigate("/sign-in");
-
+        
         return;
       }
 
@@ -74,8 +63,8 @@ export default function SignUpForm() {
 
         navigate("/");
       } else {
-        toast({ title: "Login failed. Please try again." });
-
+        toast({ title: "Login failed. Please try again.", });
+        
         return;
       }
     } catch (error) {
@@ -105,12 +94,13 @@ export default function SignUpForm() {
               <FormItem>
                 <FormLabel className="shad-form_label">Name</FormLabel>
                 <FormControl>
-                  <Input type="text" {...field} className="shad-input" />
+                  <Input type="text" className="shad-input" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="username"
@@ -175,4 +165,6 @@ export default function SignUpForm() {
       </div>
     </Form>
   );
-}
+};
+
+export default SignupForm;

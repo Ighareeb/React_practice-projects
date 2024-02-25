@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import { Models } from "appwrite";
+import { Link } from "react-router-dom";
 
-import { PostStats } from "@/components/shared/index.tsx";
-import { useUserContext } from "@/context/AuthContext.tsx";
+import { PostStats } from "@/components/shared";
+import { useUserContext } from "@/context/AuthContext";
 
 type GridPostListProps = {
   posts: Models.Document[];
@@ -31,7 +31,7 @@ const GridPostList = ({
 
           <div className="grid-post_user">
             {showUser && (
-              <div className="flex items-center justify-start gap-2 flex-2">
+              <div className="flex items-center justify-start gap-2 flex-1">
                 <img
                   src={
                     post.creator.imageUrl ||
